@@ -1,8 +1,10 @@
-package id.web.runsel.udaraq;
+package id.web.runsel.udaraq.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import id.web.runsel.udaraq.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="id.web.runsel.udaraq">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -9,11 +10,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".activity.ProfileActivity"></activity>
+        <activity android:name=".activity.HomeActivity" />
         <activity
-            android:name="id.web.runsel.udaraq.auth.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:name=".activity.DashboardActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.auth.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,9 +27,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="id.web.runsel.udaraq.auth.RegisterActivity"
+            android:name=".activity.auth.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <!-- android:windowSoftInputMode="adjustPan" -->
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -1,15 +1,25 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/sfpro</item>
     </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="AppTheme.Main">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:fontFamily">@font/sfpro</item>
+        <item name="android:windowBackground">#F5F5F5</item>
+    </style>
+
     <!-- The launcher theme. It sets the main window background to the launch_screen drawable -->
     <!--styles for app-->
     <!--df dialog-->
@@ -40,5 +50,16 @@
         <item name="android:background">@drawable/button_background_blue</item>
         <item name="android:textColor">@color/whiteTextColor</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="menu_text_style_active">
+        <item name="fontFamily">@font/sf_light</item>
+        <item name="android:textSize">8sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="menu_text_style_inactive">
+        <item name="fontFamily">@font/sf_light</item>
+        <item name="android:textSize">8sp</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 </resources>

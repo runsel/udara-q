@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="id.web.runsel.udaraq.auth.RegisterActivity"
+    tools:context=".activity.auth.RegisterActivity"
     android:background="@color/register_bk_color"
     android:focusableInTouchMode="true"
     android:gravity="center"
@@ -23,7 +23,8 @@
             android:layout_marginTop="30dp">
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="35dp">
                 <TextView
                     android:layout_centerVertical="true"
                     android:layout_alignParentLeft="true"
@@ -75,18 +76,6 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/textInputMobile"
-                        style="@style/parent"
-                        android:layout_marginTop="@dimen/loginViewsMargin">
-                        <EditText
-                            android:id="@+id/editTextMobile"
-                            style="@style/modifiedEditText"
-                            android:inputType="phone"
-                            android:maxLines="1"
-                            android:hint="Mobile Number"/>
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/textInputPassword"
                         style="@style/parent"
                         android:layout_marginTop="@dimen/loginViewsMargin">
@@ -98,6 +87,18 @@
                             android:inputType="textPassword"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputRePassword"
+                        style="@style/parent"
+                        android:layout_marginTop="@dimen/loginViewsMargin">
+                        <EditText
+                            android:id="@+id/editTextRePassword"
+                            style="@style/modifiedEditText"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:hint="Re-type password"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
                     <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
                         android:id="@+id/cirRegisterButton"
                         style="@style/loginButton"
@@ -107,7 +108,8 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/loginViewsMargin"
                         app:initialCornerAngle="27dp"
-                        app:spinning_bar_padding="6dp"/>
+                        app:spinning_bar_padding="6dp"
+                        android:onClick="onRegisterClick"/>
 
                     <TextView
                         style="@style/parent"
@@ -117,7 +119,7 @@
                         android:textSize="17sp"
                         android:text="Already have an account?"
                         android:layout_marginTop="@dimen/loginViewsMargin"
-                        android:onClick="onRegisterClick"/>
+                        android:onClick="onLoginClick"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -140,7 +142,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/whiteTextColor"
-                    android:text="Use other Methods"
+                    android:text="by"
                     android:layout_weight="6"
                     android:textSize="12sp"
                     android:textAlignment="center"/>
@@ -159,15 +161,16 @@
                 android:gravity="center"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="30dp">
-                <ImageView
+
+                <TextView
+                    android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_facebook"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_google_plus"
-                    android:layout_marginLeft="10dp"/>
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:text="Foniks" />
+
             </LinearLayout>
 
 
@@ -188,6 +191,6 @@
         android:src="@drawable/ic_back_img"
         android:layout_marginRight="11dp"
         android:layout_marginBottom="30dp"
-        android:onClick="onRegisterClick"
+        android:onClick="onLoginClick"
         android:adjustViewBounds="false"/>
 </RelativeLayout>

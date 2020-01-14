@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="id.web.runsel.udaraq.auth.LoginActivity"
+    tools:context=".activity.auth.LoginActivity"
     android:background="@color/login_bk_color"
     android:focusableInTouchMode="true"
     android:gravity="center"
@@ -25,7 +25,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="35dp">
+                android:layout_marginBottom="60dp">
                 <TextView
                     android:layout_centerVertical="true"
                     android:layout_alignParentStart="true"
@@ -35,7 +35,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_register_hero"
+                    android:src="@drawable/ic_logo_mobile"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"/>
             </RelativeLayout>
@@ -83,7 +83,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/loginViewsMargin"
                 app:spinning_bar_padding="6dp"
-                app:initialCornerAngle="27dp"/>
+                app:initialCornerAngle="27dp"
+                android:onClick="onLoginCLick"/>
 
             <TextView
                 style="@style/parent"

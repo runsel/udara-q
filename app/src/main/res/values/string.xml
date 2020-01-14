@@ -2,4 +2,9 @@
     <string name="app_name">Udara Q</string>
     <string name="login_email_hint">Email</string>
     <string name="login_password_hint">Password</string>
+
+    <string name="particleVal">8.5 \u00B5g/m\u00B3</string>
+    <string name="aqiVal">110 </string>
+    <string name="tempVal">34\u00B0 C</string>
+    <string name="humidityVal">94%</string>
 </resources>

@@ -3,4 +3,12 @@
     <dimen name="headerTextSize">25sp</dimen>
     <dimen name="newsMoreTextSize">12sp</dimen>
     <dimen name="loginViewsMargin">20dp</dimen>
+
+    <!-- Text size -->
+    <dimen name="headerText">24sp</dimen>
+    <dimen name="subheaderText">18sp</dimen>
+    <dimen name="generalText">12sp</dimen>
+    <dimen name="cardHeaderText">10sp</dimen>
+    <dimen name="subTitleText">8sp</dimen>
+    <dimen name="tempStatusText">10sp</dimen>
 </resources>
