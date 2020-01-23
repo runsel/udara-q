@@ -32,6 +32,16 @@ public class User {
         this.password = password;
     }
 
+    public User(String name) {
+        this.name = name;
+    }
+
+    public User(String name, String password, String password_confirmation) {
+        this.name = name;
+        this.password = password;
+        this.password_confirmation = getPassword_confirmation();
+    }
+
     public int getId() {
         return id;
     }

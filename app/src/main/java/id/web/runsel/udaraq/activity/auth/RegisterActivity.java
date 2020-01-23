@@ -1,6 +1,5 @@
 package id.web.runsel.udaraq.activity.auth;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import br.com.simplepass.loading_button_lib.customViews.CircularProgressButton;
 import id.web.runsel.udaraq.R;
 import id.web.runsel.udaraq.model.User;
-import id.web.runsel.udaraq.adapter.UserResponse;
+import id.web.runsel.udaraq.response.UserResponse;
 import id.web.runsel.udaraq.service.AuthService;
 import id.web.runsel.udaraq.service.RetrofitInstance;
 import retrofit2.Call;
@@ -25,7 +24,7 @@ import retrofit2.Response;
 public class RegisterActivity extends AppCompatActivity {
     private EditText editTextName, editTextEmail, editTextPassword, editTextRePassword;
     //private Button cirRegisterButton;
-    private CircularProgressButton cirRegisterButton;
+    private CircularProgressButton btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +56,8 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void onRegisterClick(View view) {
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Register...");
-        progressDialog.show();
+        btn = view.findViewById(R.id.cirRegisterButton);
+        btn.startAnimation();
 
         String name = editTextName.getText().toString();
         String email = editTextEmail.getText().toString();
@@ -78,7 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if(response.isSuccessful()) {
                     try{
                         //hiding progress dialog
-                        progressDialog.dismiss();
+                        btn.revertAnimation();
                         Toast.makeText(getApplicationContext(), "Registration success!", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                         startActivity(intent);
@@ -86,14 +84,14 @@ public class RegisterActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 } else {
-                    progressDialog.dismiss();
+                    btn.revertAnimation();
                     Toast.makeText(getApplicationContext(), "Failed : Please check your input!", Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onFailure(Call<UserResponse> call, Throwable t) {
-                progressDialog.dismiss();
+                btn.revertAnimation();
                 Log.e("response-failure", call.toString());
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
             }

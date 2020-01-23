@@ -51,6 +51,11 @@
         <item name="android:textColor">@color/whiteTextColor</item>
         <item name="android:textStyle">bold</item>
     </style>
+    <style name="logoutButton" parent="viewParent">
+        <item name="android:background">@drawable/button_background_red</item>
+        <item name="android:textColor">@color/whiteTextColor</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
     <style name="menu_text_style_active">
         <item name="fontFamily">@font/sf_light</item>

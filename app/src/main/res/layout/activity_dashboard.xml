@@ -22,6 +22,7 @@
             app:itemTextColor="#2E485A"
             app:itemTextAppearanceInactive="@style/menu_text_style_active"
             app:itemTextAppearanceActive="@style/menu_text_style_active"
-            app:menu="@menu/bottom_menu"/>
+            app:menu="@menu/bottom_menu"
+            app:labelVisibilityMode="labeled"/>
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

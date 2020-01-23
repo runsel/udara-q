@@ -1,17 +1,16 @@
 package id.web.runsel.udaraq.service;
 
-import com.google.gson.JsonObject;
-
+import id.web.runsel.udaraq.response.ForecastResponse;
+import id.web.runsel.udaraq.response.WeatherResponse;
 import retrofit2.Call;
-import retrofit2.http.Body;
-import retrofit2.http.Headers;
-import retrofit2.http.POST;
+import retrofit2.http.GET;
+import retrofit2.http.Header;
+import retrofit2.http.Url;
 
 public interface WeatherService {
-    @Headers({
-            "Content-Type: application/json",
-            "X-Requested-With: XMLHttpRequest"
-    })
-    @POST("auth/login")
-    Call<WeatherService> getCurrentLocation(@Body JsonObject jsonObject);
+    @GET
+    Call<WeatherResponse> getCurrentLocation(@Header("Authorization") String token, @Url String url);
+
+    @GET
+    Call<ForecastResponse> getForecast(@Header("Authorization") String token, @Url String url);
 }

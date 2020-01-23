@@ -3,8 +3,12 @@
     <string name="login_email_hint">Email</string>
     <string name="login_password_hint">Password</string>
 
-    <string name="particleVal">8.5 \u00B5g/m\u00B3</string>
+    <string name="particleVal">10+ m</string>
     <string name="aqiVal">110 </string>
     <string name="tempVal">34\u00B0 C</string>
     <string name="humidityVal">94%</string>
+
+    <string name="about">Aplikasi pemantau kualitas udara dan cuaca ini merupakan aplikasi yang dibuat dalam rangka memenuhi tugas mata kuliah Pemrograman Mobile pada Universitas Teknokrat Indonesia.
+Aplikasi ini dikembangkan oleh Team Foniks.</string>
+    <string name="github">https://github.com/runsel/udara-q</string>
 </resources>

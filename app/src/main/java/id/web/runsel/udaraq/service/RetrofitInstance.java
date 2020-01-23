@@ -1,6 +1,7 @@
 package id.web.runsel.udaraq.service;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -17,16 +18,18 @@ public class RetrofitInstance {
 
     private static HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
     private static OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder()
+            .connectTimeout(120, TimeUnit.SECONDS)
+            .readTimeout(60, TimeUnit.SECONDS)
+            .writeTimeout(60, TimeUnit.SECONDS)
             .addInterceptor(httpLoggingInterceptor)
             .addInterceptor(new Interceptor() {
                 @Override
-                public Response intercept(Interceptor.Chain chain) throws IOException {
+                public Response intercept(Chain chain) throws IOException {
                     Request original = chain.request();
 
                     Request request = original.newBuilder()
                             .header("Content-Type", "application/json")
                             .header("X-Requested-With", "XMLHttpRequest")
-                            .method(original.method(), original.body())
                             .build();
 
                     return chain.proceed(request);
